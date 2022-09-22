@@ -1,4 +1,3 @@
-from genericpath import isdir
 from uuid import uuid4
 from os import path, mkdir
 
@@ -7,8 +6,8 @@ class ImageStore:
     def __init__(self, storage_path):
         self._storage_path = storage_path
 
-    async def save(self, file):
-        name = str(uuid4()) + ".png"
+    async def save(self, file, uuidgen=uuid4):
+        name = str(uuidgen()) + ".png"
         newPath = path.join(self._storage_path, name)
 
         if not path.isdir(self._storage_path):

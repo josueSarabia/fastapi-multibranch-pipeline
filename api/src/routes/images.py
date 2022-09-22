@@ -1,7 +1,7 @@
-from fastapi import APIRouter, UploadFile, HTTPException, Depends
+from fastapi import APIRouter, UploadFile, HTTPException, Depends, File
 from fastapi.responses import FileResponse
 from os import getcwd, path
-from ..store.image_store import ImageStore
+from store.image_store import ImageStore
 
 
 def get_store():
@@ -28,7 +28,7 @@ async def create_image(file: UploadFile, image_store: ImageStore = Depends(get_s
     return "success"
 
 
-@routerImages.get("/images/{id}")
+@routerImages.get("/images/{id}", status_code=200)
 async def get_image(id: str):
     file_path = path.join(getcwd(), "images" , id + '.png')
 
