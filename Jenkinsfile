@@ -58,7 +58,7 @@ pipeline {
             }
             steps {
                 script {
-                    docker.withRegistry('', 'DockerHub') {
+                    docker.withRegistry('', 'Dockerhub Credentials') {
                         customImage.push()
                     }
                 }
