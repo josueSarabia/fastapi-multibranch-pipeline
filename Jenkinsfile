@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        !#/bin/bash
+                        #!/bin/bash
                         cd api/
                         pip3 install virtualenv
                         python3 -m virtualenv venv
