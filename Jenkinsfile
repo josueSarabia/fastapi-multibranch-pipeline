@@ -19,7 +19,13 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    sh 'pip3 install -r requirements.txt; python3 -m pytest'
+                    sh '''
+                        cd api/
+                        virtualenv venv
+                        source ./venv/bin/activate
+                        pip install -r requirements.txt
+                        python -m pytest
+                    '''
                 }
             }
             post {

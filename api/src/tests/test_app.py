@@ -1,9 +1,9 @@
 import pytest
 from unittest.mock import AsyncMock
-from store.image_store import ImageStore
+from ..store.image_store import ImageStore
 from fastapi.testclient import TestClient
-from main import app
-from routes.images import get_store
+from ..main import app
+from ..routes.images import get_store
 from os import path, getcwd, remove, rmdir
 from fastapi import UploadFile
 
