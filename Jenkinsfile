@@ -11,7 +11,7 @@ pipeline {
         stage('Start Container for Testing') {
             steps {
                 script {
-                    sh 'sudo docker-compose rm -f; sudo docker-compose up -d images'
+                    sh 'docker compose rm -f; docker compose up -d images'
                 }
             }
         }
