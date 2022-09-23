@@ -1,7 +1,7 @@
 from fastapi import APIRouter, UploadFile, HTTPException, Depends, File
 from fastapi.responses import FileResponse
 from os import getcwd, path
-from store.image_store import ImageStore
+from ..store.image_store import ImageStore
 
 
 def get_store():
