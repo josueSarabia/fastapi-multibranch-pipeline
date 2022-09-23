@@ -21,10 +21,10 @@ pipeline {
                 script {
                     sh '''
                         cd api/
-                        virtualenv venv
+                        python3 -m virtualenv venv
                         source ./venv/bin/activate
-                        pip install -r requirements.txt
-                        python -m pytest
+                        pip3 install -r requirements.txt
+                        python3 -m pytest
                     '''
                 }
             }
